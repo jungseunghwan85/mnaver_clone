@@ -4,9 +4,191 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" type= "image/x-icon" href="./favicon.ico">
         <title>네이버 모바일</title>
+        <style>
+            :root {
+                --issue-banner-head-fontcolor: initial;
+                --issue-banner-main-fontcolor: initial;
+                --issue-banner-title-fontcolor: initial;
+                --issue-banner-sub1-fontcolor: initial;
+                --issue-banner-sub2-fontcolor: initial;
+                --issue-banner-sub3-fontcolor: initial;
+                }
+            html,body {
+                background-color: #eaeef3;
+                color: #303038;
+                position: relative;
+                background-color: #fff;
+                color: #000;
+                word-break: break-all;
+                -webkit-text-size-adjust: none;
+                font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", Arial, sans-serif;
+                font-weight: 500;
+                margin: 0;
+                padding: 0;
+                display: block;
+            }
+            header {
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 0;
+                max-width: 1118px;
+                margin: 0 auto;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+                    }
+            
+                .blind {
+                    position: absolute;
+                    clip: rect(0 0 0 0);
+                    width: 1px;
+                    height: 1px;
+                    margin: -1px;
+                    overflow: hidden;
+                }
 
+            #header-left {
+                padding-left: 10px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 20;
+            }        
+
+            #header-right {
+                padding-right: 10px;
+                position: absolute;
+                top: 0;
+                right: 0;
+                z-index: 20;
+            }
+            #header-hamburger {
+                width: 40px;
+                height: 40px;
+                background-position: -135px -145px;
+                display: block;
+                background-image: url(naver_images/sp_main_search.png);
+                background-size: 323px 185px;
+                background-repeat: no-repeat;
+                position: relative;
+                float: left;
+            }
+            #header-naverPay {
+                margin-left: 2px;
+                position: relative;
+                float: left;
+                width: 40px;
+                height: 40px;
+                background-position: -45px -145px;
+                display: block;
+                background-size: 323px 185px;
+                background-repeat: no-repeat;
+                background-image: url(naver_images/sp_main_search.png);
+            }
+            #header-cart {
+                margin-left: 2px;
+                position: relative;
+                float: left;
+                width: 40px;
+                height: 40px;
+                background-position: -180px -145px;
+                display: block;
+                background-size: 323px 185px;
+                background-repeat: no-repeat;
+                background-image: url(naver_images/sp_main_search.png);
+            }
+            #header-naverTalk {
+                position: relative;
+                float: left;
+                width: 40px;
+                height: 40px;
+                background-position: -225px -145px;
+                display: block;
+                background-size: 323px 185px;
+                background-repeat: no-repeat;
+                background-image: url(naver_images/sp_main_search.png);
+
+            }
+            #header-alarm {
+                margin-left: 2px;
+                width: 40px;
+                height: 40px;
+                background-position: -93px -59px;
+                display: block;
+                background-size: 323px 185px;
+                background-repeat: no-repeat;
+                background-image: url(naver_images/sp_main_search.png);
+            }
+            #header-myhome {
+                margin-left: 2px;
+                position: relative;
+                float: left;     
+                width: 40px;
+                height: 40px;
+                background-position: -90px -145px;
+                display: block;
+                background-size: 323px 185px;
+                background-repeat: no-repeat;
+                background-image: url(naver_images/sp_main_search.png);
+            }
+            
+                
+        </style>
     </head>
     <body>
-        
+        <header>
+            <div id="header-left">
+                <button id="header-hamburger">
+                    <div></div>
+                    <span class="blind">확장 영역</span>
+                </button>
+
+                <button id="header-naverPay">
+                    <div></div>
+                    <span class="blind">네이버 페이</span>
+                </button>
+
+                <button id="header-cart">
+                    <div></div>
+                    <span class="blind">장바구니</span>
+                </button>
+
+                
+            </div>
+            <div id="header-right">
+                <button id="header-naverTalk">
+                    <div></div>
+                    <span class="blind">네이버톡</span>
+                </button>
+                <button id="header-alarm">
+                    <div></div>
+                    <span class="blind">알림</span>
+                </button>
+                
+                <button id="header-myhome">
+                    <div></div>
+                    <span class="blind">마이홈</span>
+                </button>
+            </div>
+        </header>
+        <main>
+            <search></search>
+            <nav>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    
+                </ul>
+            </nav>
+            <aside></aside>
+            <weather></weather>
+            <content></content>
+        </main>
     </body>
 </html>
