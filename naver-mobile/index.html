@@ -50,7 +50,7 @@
             #header-left {
                 padding-left: 10px;
                 position: absolute;
-                top: 0;
+                top: 8px;
                 left: 0;
                 z-index: 20;
             }        
@@ -58,10 +58,15 @@
             #header-right {
                 padding-right: 10px;
                 position: absolute;
-                top: 0;
+                top: 8px;
                 right: 0;
                 z-index: 20;
             }
+            #header-hamburger, #header-naverPay,#header-cart, #header-naverTalk, #header-alarm, #header-myhome {
+                border: none;
+                background: none ;
+            }
+                
             #header-hamburger {
                 width: 40px;
                 height: 40px;
@@ -136,7 +141,126 @@
             nav > ul {
                 list-style-type: none;
             }
+            .search-container {
+                position: relative;
+                z-index: 0;
+                padding-top: 120px;
+                min-height: 303px;
+                box-sizing: border-box;
+            }
+            .search {
+                position: relative;
+                z-index: 1;
+                max-width: 568px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }   
+            .search-wrap {
+                position: relative;
+                height: 54px;
+                padding: 1px;
+                background: linear-gradient(135deg, #03cf5d 0, #03c75a 100%);
+                border-radius: 27px;
+                box-shadow: 0 5px 10px 0 rgba(117, 145, 181, .12);
+                box-sizing: border-box;
+                }
+            .search-wrap::before {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 1px;
+                right: 1px;
+                bottom: 1px;
+                left: 1px;
+                background-color: #fff;
+                border-radius: 29px;
+            }
+            .search-inner {
+                position: relative;
+                padding-left: 52px;
+                border-radius: 26px;
+                overflow: hidden;
+            }
+            .logo {
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 6px 0 6px 11px;
                 
+            }
+            .sch-logo {
+                position: relative;
+                color: inherit;
+                text-decoration: none;
+                background: linear-gradient(135deg, #03cf5d 0, #03c75a 100%);
+                display: block;
+                width: 40px;
+                height: 40px;
+                background-position: -270px -145px;
+                background-size: 323px 185px;
+                background-repeat: no-repeat;
+                background-image: url(naver_images/sp_main_search.png);
+            }
+            .sch-logo::before {
+                width: 40px;
+                height: 40px;
+                background-position: -270px -145px;
+                background-size: 323px 185px;
+                background-repeat: no-repeat;
+                background-image: url(naver_images/sp_main_search.png);
+                display: block; 
+            }
+            .sch-logo::after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: -1px;
+                right: -1px;
+                bottom: -1px;
+                left: -1px;
+                border: 2px solid #fff;
+            }
+                
+            form {
+                display: block;
+                unicode-bidi: isolate;
+            }
+            .input-wrap {
+                padding: 0 31px 0 8px;
+                margin-right: 9px;
+            }
+            .sch-input{
+                position: relative;
+                z-index: 10;
+                width: 100%;
+                height: 22px;
+                padding: 15px 0;
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 22px;
+                letter-spacing: -.5px;
+                color: #1e1e23;
+                border: 0;
+                outline: transparent;
+                background: 0 0;
+                text-overflow: ellipsis;
+                box-sizing: content-box;
+            }
+            #greendot {
+                display: block;
+                width: 40px;
+                height: 40px;
+                background-position: 0 -145px;
+                background-size: 323px 185px;
+                background-repeat: no-repeat;
+                background-image: url(naver_images/sp_main_search.png);
+                padding: 6px 6px 6px 0;
+                display: inline-block;
+                border: 0;
+                position: absolute;
+                top: 0;
+                z-index: 10;
+            }
         </style>
     </head>
     <body>
@@ -176,20 +300,36 @@
             </div>
         </header>
         <main>
-            <search></search>
-            <nav>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    
-                </ul>
-            </nav>
+            <div class="search-container">
+                <div class="search">
+                    <div class="search-wrap">
+                        <div class="search-inner">
+                            <div class="logo">
+                                <div class="sch-logo"></div>
+                            </div>
+                            <form name="sch" role="search" action="https://m.search.naver.com/search.naver">
+                                <div class="input-wrap">
+                                    <input class="sch-input"type="search" title="검색어를 입력해주세요." placeholder="검색어를 입력해주세요." name="query" autocomplete="off">
+                                </div>
+                            </form>
+                            <button id="greendot" ></button>
+                        </div>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        
+                    </ul>
+                </nav>
+            </div>
             <aside></aside>
             <weather></weather>
             <content></content>
