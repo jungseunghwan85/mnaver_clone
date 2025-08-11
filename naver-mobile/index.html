@@ -14,13 +14,10 @@
                 --issue-banner-sub3-fontcolor: initial;
                 }
             html,body {
-                background-color: #eaeef3;
+                background-color: #f4f6f8;
                 color: #303038;
                 position: relative;
-                background-color: #fff;
-                color: #000;
                 word-break: break-all;
-                -webkit-text-size-adjust: none;
                 font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", Arial, sans-serif;
                 font-weight: 500;
                 margin: 0;
@@ -255,12 +252,16 @@
             .nav-main {
                 padding-top: 20px;
                 padding-bottom: 36px;
+                width: 278px;
+                margin: 0 auto;
+                height: 144px;
             }
             .nav-list {
                 list-style-type: none;
                 display: flex;
                 flex-wrap: wrap;
                 margin: -8px 0 0 -26px;
+                padding-left: 0;
             }
             .nav-item {
                 padding: 8px 0 0 26px;
@@ -304,11 +305,50 @@
                 background-repeat: no-repeat;
                 background-image: url(naver_images/sp_main_search.png);
             }
-            img {
+            .nav-icon::after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 50px;
+                height: 50px;
+                background-position: -218px -21px;
+                z-index: -1;
+                background-size: 323px 185px;
+                background-repeat: no-repeat;
+                background-image: url(naver_images/sp_main_search.png);
+            }
+            .icon-image {
                 vertical-align: top;
                 width: 44px;
                 height: 44px;
                 border: 0;
+            }
+            .home-ad {
+                overflow: visible;
+                max-height: 140px;
+                height: calc(14000vw / 375);
+                margin: 0 8px;
+                opacity: 1;
+                transition: opacity, max-height .3s cubic-bezier(.215,.61,.355,1);
+            }
+            .home-ad-wrapper {
+                height: 100%;
+                margin: 0 auto;
+                border-radius: 8px 8px 0 0;
+                box-shadow: none;
+                position: relative;
+            }
+            .ad1-image {
+                display: block;
+                isolation: isolate;
+                max-width: 375px;
+                position: static;
+                height: 99.734px;;
+                margin: 0 auto;
+                overflow-clip-margin: content-box;
+                overflow: clip;
             }
         </style>
     </head>
@@ -370,7 +410,7 @@
                         <li class="nav-item">
                             <a class="nav-item-wrap">
                                 <div class="nav-icon">
-                                    <img src="naver_images/news.png" alt="news">
+                                    <img class="icon-image" src="naver_images/news.png" alt="news">
                                 </div>
                                 <span class="nav-text">뉴스판</span>
                             </a>
@@ -378,7 +418,7 @@
                         <li class="nav-item">
                             <a class="nav-item-wrap">
                                 <div class="nav-icon">
-                                    <img>
+                                    <img class="icon-image" src="naver_images/store.png" alt="store">
                                 </div>
                                 <span class="nav-text">스토어</span>
                             </a>
@@ -386,7 +426,7 @@
                         <li class="nav-item">
                             <a class="nav-item-wrap">
                                 <div class="nav-icon">
-                                    <img>
+                                    <img class="icon-image" src="naver_images/economy.png" alt="economy">
                                 </div>
                                 <span class="nav-text">경제판</span>
                             </a>
@@ -394,15 +434,15 @@
                         <li class="nav-item">
                             <a class="nav-item-wrap">
                                 <div class="nav-icon">
-                                    <img>
+                                    <img class="icon-image" src="naver_images/clip.png" alt="clip">
                                 </div>
-                                <span class="nav-text">클리판</span>
+                                <span class="nav-text">클립판</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-item-wrap">
                                 <div class="nav-icon">
-                                    <img>
+                                    <img class="icon-image" src="naver_images/mail.png" alt="mail">
                                 </div>
                                 <span class="nav-text">메일</span>
                             </a>
@@ -410,7 +450,7 @@
                         <li class="nav-item">
                             <a class="nav-item-wrap">
                                 <div class="nav-icon">
-                                    <img>
+                                    <img class="icon-image" src="naver_images/cafe.png" alt="cafe">
                                 </div>
                                 <span class="nav-text">카페</span>
                             </a>
@@ -418,7 +458,7 @@
                         <li class="nav-item">
                             <a class="nav-item-wrap">
                                 <div class="nav-icon">
-                                    <img>
+                                    <img class="icon-image" src="naver_images/blog.png" alt="blog">
                                 </div>
                                 <span class="nav-text">블로그</span>
                             </a>
@@ -427,7 +467,7 @@
                             <a class="nav-item-wrap">
                                 <div class="nav-icon">
                                     <picture>
-                                        <img>
+                                        <img class="icon-image" src="naver_images/dotdotdot.png" alt="etc"s">
                                     </picture>
                                 </div>
                             </a>
@@ -436,9 +476,21 @@
                     </ul>
                 </div>
             </div>
-            <aside></aside>
-            <weather></weather>
-            <content></content>
+            <div class="home-ad">
+                <div class="home-ad-wrapper">
+                    <div style="height: 100%;">
+                        <div style="width: 100%; height: auto; margin: 0px auto; line-height: 0; position: absolute; left: 0px; right: 0px; bottom: 0px;">
+                           
+                                <img class="ad1-image" src="naver_images/ad1.png" alt="광고">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-container">
+                <weather></weather>
+                <content></content>
+            </div>
         </main>
     </body>
 </html>
