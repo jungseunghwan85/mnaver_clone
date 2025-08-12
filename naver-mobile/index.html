@@ -350,6 +350,52 @@
                 overflow-clip-margin: content-box;
                 overflow: clip;
             }
+            .main-container {
+                margin-top: 4px;
+                position: relative;
+                width: 100%;
+            }
+            .weather-container {
+                margin-top: 0;
+                width: 390px;
+                height: 56px;
+            }
+            .weather-wrap {
+                border-radius: 12px;
+                padding: 0 16px;
+                margin-left: 8px;
+                margin-right: 8px;
+                box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .06);
+                width: 358px;
+                height: 48px;
+                background-color: #fff;
+            }
+            .weather-inner {
+                display: flex;
+                align-items: center;
+               
+            }
+            .weather-temp {
+                width: 100%;
+                height: 48px;
+                position: relative;
+                
+            }
+            .weather-image {
+                width: 42px;
+                height: 42px;
+                background-position: -220px -48px;
+                position: absolute;
+                top: 13px;
+                left: 14px;
+                background-size: 484px 459px;
+                background-repeat: no-repeat;
+                background-image: url(naver_images/sp_weather_animation.png);
+                border: none;
+            }
+            .weather-nation {
+                white-space: nowrap;
+            }
         </style>
     </head>
     <body>
@@ -488,7 +534,16 @@
                 </div>
             </div>
             <div class="main-container">
-                <weather></weather>
+                <div class="weather-container">
+                    <div class="weather-wrap">
+                        <div class="weather-inner">
+                            <div class="weather-temp">
+                                <img class="weather-image">
+                            </div>
+                            <div class="weather-nation">전국날씨</div>
+                        </div>
+                    </div>
+                </div>
                 <content></content>
             </div>
         </main>
